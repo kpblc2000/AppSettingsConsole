@@ -159,9 +159,10 @@ namespace AddOnCore
         /// <returns></returns>
         private static string EvaluateSettingName(CadEnvironment Env, string Name)
         {
+            string separator = ".";
             return Env.Name 
-                + (string.IsNullOrWhiteSpace(Env.Version)? "" : ("." + Env.Version))
-                + (string.IsNullOrWhiteSpace(Env.Localization) ? "" : ("." + Env.Localization))
+                + (string.IsNullOrWhiteSpace(Env.Version)? "" : (separator + Env.Version))
+                + (string.IsNullOrWhiteSpace(Env.Localization) ? "" : (separator + Env.Localization))
                 + Name;
         }
 
