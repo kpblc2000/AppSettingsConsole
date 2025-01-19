@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AddOnCore;
+using System;
 
 namespace AppSettingsConsole
 {
@@ -10,6 +7,15 @@ namespace AppSettingsConsole
     {
         static void Main(string[] args)
         {
+            AppSettings.ClearSettings();
+
+            AppSettings.ConnectionString = "Some connectionString";
+            AppSettings.LastObjectTypeId = 164;
+            AppSettings.ShowSplash = true;
+
+            Console.WriteLine(AppSettings.ConfigFileName);
+
+            Console.ReadKey();
         }
     }
 }

@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AddOnCore\AddOnCore.csproj">
+      <Project>{f1d00c76-c52c-47f2-a0db-b2a03b51858d}</Project>
+      <Name>AddOnCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
