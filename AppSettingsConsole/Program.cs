@@ -1,5 +1,6 @@
 ﻿using AddOnCore;
 using System;
+using System.Globalization;
 
 namespace AppSettingsConsole
 {

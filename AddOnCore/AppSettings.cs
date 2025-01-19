@@ -9,6 +9,7 @@ namespace AddOnCore
 {
     public static class AppSettings
     {
+
         /// <summary> Строка подключения к БД </summary>
         public static string ConnectionString
         {
@@ -38,6 +39,16 @@ namespace AddOnCore
                 return true;
             }
             set => SetValue(nameof(ShowSplash), value.ToString());
+        }
+
+        public static string GetDefaultPrinterName(CadEnvironment Env)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void SetDefaultPrinterName(CadEnvironment Env, string Value)
+        {
+            throw new NotImplementedException();
         }
 
         public static RoundMethods LastActivatedRoundMethod
@@ -134,7 +145,7 @@ namespace AddOnCore
             return conf.userSettings.FirstOrDefault(o => o.name == key)?.value ?? defaultValue;
         }
 
-        private static string _configFileName =
+        private static readonly string _configFileName =
             Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $"{nameof(AppSettings)}.user.config");
 
         #region Seralization

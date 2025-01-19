@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSettingsConsole", "AppSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddOnCore", "AddOnCore\AddOnCore.csproj", "{F1D00C76-C52C-47F2-A0DB-B2A03B51858D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{51336F1B-B72D-485B-99EB-A7BF843BDB93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSettingsTests", "Tests\AppSettingsTests\AppSettingsTests.csproj", "{8C595F50-1CEA-4D53-B5F9-E3EFF572508E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,15 @@ Global
 		{F1D00C76-C52C-47F2-A0DB-B2A03B51858D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1D00C76-C52C-47F2-A0DB-B2A03B51858D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1D00C76-C52C-47F2-A0DB-B2A03B51858D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C595F50-1CEA-4D53-B5F9-E3EFF572508E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C595F50-1CEA-4D53-B5F9-E3EFF572508E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C595F50-1CEA-4D53-B5F9-E3EFF572508E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C595F50-1CEA-4D53-B5F9-E3EFF572508E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8C595F50-1CEA-4D53-B5F9-E3EFF572508E} = {51336F1B-B72D-485B-99EB-A7BF843BDB93}
 	EndGlobalSection
 EndGlobal
