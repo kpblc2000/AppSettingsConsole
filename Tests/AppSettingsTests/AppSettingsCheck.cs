@@ -63,5 +63,23 @@ namespace AppSettingsTests
             Assert.AreEqual(AppSettings.ConfigFileName,
                 Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "AppSettings.user.config"));
         }
+
+        [Test]
+        public void PrinterNameNoLocalization()
+        {
+            string printerName = "PrinterNoLocalization";
+            CadEnvironment env = new CadEnvironment("Cad", "Verstion");
+            AppSettings.SetDefaultPrinterName(env, printerName);
+            Assert.AreEqual(AppSettings.GetDefaultPrinterName(env), printerName);
+        }
+
+        [Test]
+        public void PrinterNameWithLocalization()
+        {
+            string printerName = "PrinterWithLocalization";
+            CadEnvironment env = new CadEnvironment("Cad", "Verstion", "Rus");
+            AppSettings.SetDefaultPrinterName(env, printerName);
+            Assert.AreEqual(AppSettings.GetDefaultPrinterName(env), printerName);
+        }
     }
 }

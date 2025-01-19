@@ -2,7 +2,7 @@
 {
     public class CadEnvironment
     {
-        public CadEnvironment(string Name, string Version, string Localization)
+        public CadEnvironment(string Name, string Version, string Localization = null)
         {
             this.Name = Name;
             this.Version = Version;

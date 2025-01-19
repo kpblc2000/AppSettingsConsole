@@ -41,14 +41,22 @@ namespace AddOnCore
             set => SetValue(nameof(ShowSplash), value.ToString());
         }
 
+        /// <summary>Получение имени плоттера по умолчанию</summary>
+        /// <param name="Env"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public static string GetDefaultPrinterName(CadEnvironment Env)
         {
-            throw new NotImplementedException();
+            return GetValue(EvaluateSettingName(Env, _printerSettingName));
         }
 
+        /// <summary>Назачение имени плоттера по умолчанию</summary>
+        /// <param name="Env"></param>
+        /// <param name="Value"></param>
+        /// <exception cref="NotImplementedException"></exception>
         public static void SetDefaultPrinterName(CadEnvironment Env, string Value)
         {
-            throw new NotImplementedException();
+            SetValue(EvaluateSettingName(Env, _printerSettingName), Value);
         }
 
         public static RoundMethods LastActivatedRoundMethod
@@ -145,8 +153,21 @@ namespace AddOnCore
             return conf.userSettings.FirstOrDefault(o => o.name == key)?.value ?? defaultValue;
         }
 
+        /// <summary>Вычисление имени настройки, зависящей от окружения</summary>
+        /// <param name="Env"></param>
+        /// <param name="Name"></param>
+        /// <returns></returns>
+        private static string EvaluateSettingName(CadEnvironment Env, string Name)
+        {
+            return Env.Name 
+                + (string.IsNullOrWhiteSpace(Env.Version)? "" : ("." + Env.Version))
+                + (string.IsNullOrWhiteSpace(Env.Localization) ? "" : ("." + Env.Localization))
+                + Name;
+        }
+
         private static readonly string _configFileName =
             Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), $"{nameof(AppSettings)}.user.config");
+        private static readonly string _printerSettingName = "Printer";
 
         #region Seralization
 
