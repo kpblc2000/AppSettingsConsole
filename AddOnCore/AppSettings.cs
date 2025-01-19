@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using AddOnCore.Enums;
+using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
@@ -36,6 +38,17 @@ namespace AddOnCore
                 return true;
             }
             set => SetValue(nameof(ShowSplash), value.ToString());
+        }
+
+        public static RoundMethods LastActivatedRoundMethod
+        {
+            get
+            {
+                if (Enum.TryParse(GetValue(nameof(LastActivatedRoundMethod)), out RoundMethods res))
+                    return res;
+                return RoundMethods.Unknown;
+            }
+            set => SetValue(nameof(LastActivatedRoundMethod), value.ToString());
         }
 
         /// <summary> Очищает настройки, удаляя файл с сохраненными настройками </summary>
